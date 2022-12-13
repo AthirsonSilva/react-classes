@@ -14,14 +14,18 @@ export default class Main extends React.Component {
 			'Learn Redux',
 			'Make a Todo List App',
 			'Drink coffe'
-		]
+		],
+		filteredTaskList: []
 	}
 
 	componentDidMount = () => {
 		const taskList = localStorage.getItem('taskList')
 
 		if (taskList) {
-			this.setState({ taskList: JSON.parse(taskList) })
+			this.setState({
+				taskList: JSON.parse(taskList),
+				filteredTaskList: JSON.parse(taskList)
+			})
 		} else {
 			this.setState({ taskList: [] })
 		}
@@ -60,21 +64,24 @@ export default class Main extends React.Component {
 	handleTaskSearch = (event) => {
 		event.preventDefault()
 
-		if (event.target.value) {
+		if (this.state.search) {
 			const newData = this.state.taskList.filter((item) => {
 				const itemData = item ? item.toUpperCase() : ''.toUpperCase()
 
-				const textData = event.target.value.toUpperCase()
+				const textData = this.state.search.toUpperCase()
 
 				return itemData.indexOf(textData) > -1
 			})
 
 			this.setState({
-				taskList: newData,
-				search: event.target.value
+				filteredTaskList: newData,
+				search: ''
 			})
 		} else {
-			this.setState({ taskList: this.state.taskList, search: '' })
+			this.setState({
+				filteredTaskList: JSON.parse(localStorage.getItem('taskList')),
+				search: ''
+			})
 		}
 	}
 
@@ -134,7 +141,7 @@ export default class Main extends React.Component {
 
 					<div className='Task-container'>
 						<Todo
-							taskList={this.state.taskList}
+							taskList={this.state.filteredTaskList}
 							handleTaskDelete={this.handleTaskDelete}
 							handleTaskEdit={this.handleTaskEdit}
 						/>
