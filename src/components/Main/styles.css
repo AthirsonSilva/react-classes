@@ -13,23 +13,32 @@
 	color: white;
 }
 
+.Elements-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
 .Form-container {
-	margin-top: 5vh;
+	margin: 5vh auto auto auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+.Actions-container {
+	margin: 5vh auto auto auto;
+}
+
 .Task-container {
-	margin-top: 5vh;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	background-color: #fff;
 	border-radius: 5px;
-	box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
-	width: 50vw;
-	margin: 10vh auto 2vh 25vw;
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+	width: 36vw;
+	margin: 10vh auto auto auto;
 	padding: 10px;
 	color: rgb(54, 54, 54);
 }
@@ -94,3 +103,57 @@
 	color:rgb(233, 124, 124);
 	transition: 0.5s;
 }
+
+.Todo-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 5px;
+	width: 30vw;
+	padding: 50px;
+	color: rgb(65, 64, 64);
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Todo-form .Form-body {
+	flex-direction: row;
+}
+
+.Todo-form input {
+	margin: 1.1vh 2px 3vh auto;
+	width: 20vw;
+	height: 3.8vh;
+	border-radius: 5px;
+	border-color: rgb(243, 243, 243);
+	box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.Todo-form input:focus {
+	outline: none;
+	color: rgb(65, 64, 64);
+	font-style: italic;
+}
+
+
+.Todo-form button {
+	margin: 10px auto auto -0.1px;
+	width: 3.5vw;
+	height: 5vh;
+	border-radius: 5px;
+	border-color: rgb(243, 243, 243);
+	background-color: rgb(23, 100, 201);
+	box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.Todo-form button:hover {
+	background-color: rgb(75, 144, 235);
+	cursor: pointer;
+}
+
+.Todo-form h3 {
+	margin: auto auto 4vh auto;
+	color: rgb(65, 64, 64);
+}
+

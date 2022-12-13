@@ -5,17 +5,21 @@ import './styles.css'
 import { FaPlus } from 'react-icons/fa'
 
 export default class Form extends React.Component {
-	state = {
-		task: '',
-		handleTaskChange: (e) => {
-			this.setState({ task: e.target.value })
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			task: '',
+			handleTaskChange: (e) => {
+				this.setState({ task: e.target.value })
+			}
 		}
 	}
 
 	render = () => {
 		return (
 			<form className='Todo-form' action='#'>
-				<h3>Add a new task</h3>
+				<h3>{this.props.title}</h3>
 
 				<div className='Form-body'>
 					<input

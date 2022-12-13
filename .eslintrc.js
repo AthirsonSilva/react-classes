@@ -13,6 +13,7 @@ module.exports = {
 	rules: {
 		'no-tabs': 'off',
 		indent: ['warn', 'tab'],
-		'space-before-function-paren': 'off'
+		'space-before-function-paren': 'off',
+		'react/prop-types': 'off'
 	}
 }

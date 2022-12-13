@@ -8,7 +8,7 @@
 	width: 30vw;
 	padding: 50px;
 	color: rgb(65, 64, 64);
-	box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
 }
 
 .Todo-form .Form-body {
