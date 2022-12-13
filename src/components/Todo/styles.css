@@ -1,0 +1,95 @@
+.Task-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+	width: 36vw;
+	margin: 10vh auto auto auto;
+	padding: 10px;
+	color: rgb(54, 54, 54);
+}
+
+.Task-container ul {
+	list-style: none;
+}
+
+.Task-container li {
+	text-align: left;
+}
+
+.Task-container h3 {
+	margin-left: 4vh;
+	color: #000;
+}
+
+.Task-container ul {
+	width: 90%;
+}
+
+.Task-list li {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	padding: 1vh 1vh 1vh 1vh;
+}
+
+.Task-list li:hover {
+	background-color: #d8d8d8;
+	border-radius: 5px;
+}
+
+.Task-list li .Action-buttons {
+	right: 4vw;
+}
+
+.Task-list span {
+	margin: 0 0.5vh 0 0.5vh;
+}
+
+.Task-list span:first-child {
+	margin-left: 2vh;
+}
+
+.Task-list .Edit-button {
+	color:rgb(57, 95, 199);
+}
+
+.Task-list .Edit-button:hover {
+	cursor: pointer;
+	color:rgb(99, 132, 224);
+	transition: 0.5s;
+}
+
+.Task-list .Delete-button {
+	color:rgb(218, 65, 65);
+}
+
+.Task-list .Delete-button:hover {
+	cursor: pointer;
+	color:rgb(233, 124, 124);
+	transition: 0.5s;
+}
+
+.Todo-header h3 {
+	margin-left: 3vw;
+}
+
+.Todo-header {
+	display: flex;
+	flex-direction: row;
+	width: 170%;
+	margin: 0 auto 0 auto;
+	justify-content: space-between;
+}
+
+.Todo-header span {
+	margin: 3.5vh auto auto auto;
+}
+
+.Todo-header span:hover {
+	cursor: pointer;
+	color: rgb(151, 151, 151);
+	transition: 0.5s;
+}

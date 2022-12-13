@@ -1,11 +1,19 @@
 import React from 'react'
 
-import { FaEdit, FaEraser } from 'react-icons/fa'
+import './styles.css'
+
+import { FaEdit, FaEraser, FaTasks } from 'react-icons/fa'
 
 const Todo = (props) => {
 	return (
 		<>
-			<h3>Tasks</h3>
+			<div className='Todo-header'>
+				<h3>Tasks</h3>
+
+				<span onClick={props.refreshTaskList}>
+					<FaTasks />
+				</span>
+			</div>
 
 			<ul>
 				{props.taskList.map((task, index) => {

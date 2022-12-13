@@ -19,7 +19,7 @@ const Form = (props) => {
 					/>
 
 					<button type='submit'>
-						<FaPlus />
+						<FaPlus color='white' />
 					</button>
 				</div>
 			)
@@ -37,7 +37,7 @@ const Form = (props) => {
 				/>
 
 				<button type='submit'>
-					<FaSearch />
+					<FaSearch color='white' />
 				</button>
 			</div>
 		)

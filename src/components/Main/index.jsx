@@ -144,6 +144,7 @@ export default class Main extends React.Component {
 							taskList={this.state.filteredTaskList}
 							handleTaskDelete={this.handleTaskDelete}
 							handleTaskEdit={this.handleTaskEdit}
+							refreshTaskList={this.componentDidMount}
 						/>
 					</div>
 				</div>
