@@ -60,6 +60,34 @@ export default class Main extends React.Component {
 		}
 	}
 
+	handleTaskDelete = (event, index) => {
+		const newTaskList = this.state.taskList.filter((item, i) => {
+			return i !== index
+		})
+
+		this.setState({ taskList: newTaskList })
+	}
+
+	handleTaskEdit = (event, index) => {
+		const tempTaskList = [...this.state.taskList]
+
+		this.state.taskList.filter((item, i) => {
+			if (i === index) {
+				const newTask = prompt('Edit task', item)
+
+				if (newTask) {
+					tempTaskList[i] = newTask
+
+					return tempTaskList[i]
+				}
+			}
+
+			return item
+		})
+
+		this.setState({ taskList: tempTaskList })
+	}
+
 	render = () => {
 		return (
 			<div className='App'>
@@ -112,16 +140,32 @@ export default class Main extends React.Component {
 						<h3>Tasks</h3>
 
 						<ul>
-							{this.state.taskList.map((task) => {
+							{this.state.taskList.map((task, index) => {
 								return (
 									<div key={task} className='Task-list'>
 										<li>
 											{task}
 											<div className='Action-buttons'>
-												<span className='Edit-button'>
+												<span
+													onClick={(e) =>
+														this.handleTaskEdit(
+															e,
+															index
+														)
+													}
+													className='Edit-button'
+												>
 													<FaEdit />
 												</span>
-												<span className='Delete-button'>
+												<span
+													onClick={(e) =>
+														this.handleTaskDelete(
+															e,
+															index
+														)
+													}
+													className='Delete-button'
+												>
 													<FaEraser />
 												</span>
 											</div>
