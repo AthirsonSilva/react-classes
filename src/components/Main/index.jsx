@@ -12,10 +12,27 @@ export default class Main extends React.Component {
 			'Learn React',
 			'Learn Redux',
 			'Make a Todo List App',
-			'Drink coffe',
-			'Go to the gym',
-			'Go to the beach'
+			'Drink coffe'
 		]
+	}
+
+	componentDidMount = () => {
+		const taskList = localStorage.getItem('taskList')
+
+		if (taskList) {
+			this.setState({ taskList: JSON.parse(taskList) })
+		} else {
+			this.setState({ taskList: [] })
+		}
+	}
+
+	componentDidUpdate = (previousProps, previousState) => {
+		if (previousState.taskList !== this.state.taskList) {
+			localStorage.setItem(
+				'taskList',
+				JSON.stringify(this.state.taskList)
+			)
+		}
 	}
 
 	handleTaskChange = (event) => {
