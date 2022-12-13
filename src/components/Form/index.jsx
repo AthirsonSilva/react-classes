@@ -15,15 +15,19 @@ export default class Form extends React.Component {
 	render = () => {
 		return (
 			<form className='Todo-form' action='#'>
-				<input
-					onChange={this.state.handleTaskChange}
-					type='text'
-					value={this.state.task}
-					placeholder='New task'
-				/>
-				<button type='submit'>
-					<FaPlus color='white' size={20} />
-				</button>
+				<h3>Add a new task</h3>
+
+				<div className='Form-body'>
+					<input
+						onChange={this.state.handleTaskChange}
+						type='text'
+						value={this.state.task}
+						placeholder='New task'
+					/>
+					<button type='submit'>
+						<FaPlus color='white' size={20} />
+					</button>
+				</div>
 			</form>
 		)
 	}

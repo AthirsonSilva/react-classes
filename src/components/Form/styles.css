@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	background-color: white;
 	border-radius: 5px;
 	width: 30vw;
@@ -10,8 +11,12 @@
 	box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.5);
 }
 
+.Todo-form .Form-body {
+	flex-direction: row;
+}
+
 .Todo-form input {
-	margin: 10px 2px 10px auto;
+	margin: 10px 2px 3vh auto;
 	width: 20vw;
 	height: 4vh;
 	border-radius: 5px;
@@ -27,7 +32,7 @@
 
 
 .Todo-form button {
-	margin: auto auto auto -0.1px;
+	margin: 10px auto auto -0.1px;
 	width: 3.5vw;
 	height: 5vh;
 	border-radius: 5px;
@@ -39,4 +44,9 @@
 .Todo-form button:hover {
 	background-color: rgb(75, 144, 235);
 	cursor: pointer;
+}
+
+.Todo-form h3 {
+	margin: auto auto 4vh auto;
+	color: rgb(65, 64, 64);
 }
