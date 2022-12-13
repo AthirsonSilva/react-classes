@@ -37,6 +37,10 @@ export default class Main extends React.Component {
 				'taskList',
 				JSON.stringify(this.state.taskList)
 			)
+
+			this.setState({
+				filteredTaskList: this.state.taskList
+			})
 		}
 	}
 
@@ -56,7 +60,7 @@ export default class Main extends React.Component {
 		}
 
 		this.setState({
-			taskList: [...this.state.taskList, this.state.task],
+			filteredTaskList: [...this.state.taskList, this.state.task],
 			task: ''
 		})
 	}
@@ -86,7 +90,7 @@ export default class Main extends React.Component {
 	}
 
 	handleTaskDelete = (event, index) => {
-		const newTaskList = this.state.taskList.filter((item, i) => {
+		const newTaskList = this.state.filteredTaskList.filter((item, i) => {
 			return i !== index
 		})
 
@@ -94,9 +98,9 @@ export default class Main extends React.Component {
 	}
 
 	handleTaskEdit = (event, index) => {
-		const tempTaskList = [...this.state.taskList]
+		const tempTaskList = [...this.state.filteredTaskList]
 
-		this.state.taskList.filter((item, i) => {
+		this.state.filteredTaskList.filter((item, i) => {
 			if (i === index) {
 				const newTask = prompt('Edit task', item)
 
@@ -110,7 +114,7 @@ export default class Main extends React.Component {
 			return item
 		})
 
-		this.setState({ taskList: tempTaskList })
+		this.setState({ filteredTaskList: tempTaskList })
 	}
 
 	render = () => {
