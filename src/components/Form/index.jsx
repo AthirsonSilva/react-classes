@@ -2,37 +2,52 @@ import React from 'react'
 
 import './styles.css'
 
-import { FaPlus } from 'react-icons/fa'
+import { FaPlus, FaSearch } from 'react-icons/fa'
 
-export default class Form extends React.Component {
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			task: '',
-			handleTaskChange: (e) => {
-				this.setState({ task: e.target.value })
-			}
-		}
-	}
-
-	render = () => {
-		return (
-			<form className='Todo-form' action='#'>
-				<h3>{this.props.title}</h3>
-
+const Form = (props) => {
+	const verifyFormType = () => {
+		if (props.title === 'Add new task') {
+			return (
 				<div className='Form-body'>
+					<h3>{props.title}</h3>
+
 					<input
-						onChange={this.state.handleTaskChange}
+						onChange={props.handleTaskChange}
 						type='text'
-						value={this.state.task}
+						value={props.task}
 						placeholder='New task'
 					/>
+
 					<button type='submit'>
-						<FaPlus color='white' size={20} />
+						<FaPlus />
 					</button>
 				</div>
-			</form>
+			)
+		}
+
+		return (
+			<div className='Search task'>
+				<h3>{props.title}</h3>
+
+				<input
+					onChange={props.handleTaskChange}
+					type='text'
+					value={props.task}
+					placeholder='New task'
+				/>
+
+				<button type='submit'>
+					<FaSearch />
+				</button>
+			</div>
 		)
 	}
+
+	return (
+		<form className='Todo-form' onSubmit={props.handleTaskAddition}>
+			{verifyFormType()}
+		</form>
+	)
 }
+
+export default Form

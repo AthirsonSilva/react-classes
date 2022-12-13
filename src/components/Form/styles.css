@@ -1,3 +1,4 @@
+
 .Todo-form {
 	display: flex;
 	align-items: center;
@@ -16,9 +17,9 @@
 }
 
 .Todo-form input {
-	margin: 10px 2px 3vh auto;
+	margin: 1.1vh 2px 3vh auto;
 	width: 20vw;
-	height: 4vh;
+	height: 3.8vh;
 	border-radius: 5px;
 	border-color: rgb(243, 243, 243);
 	box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.5);
@@ -50,3 +51,4 @@
 	margin: auto auto 4vh auto;
 	color: rgb(65, 64, 64);
 }
+

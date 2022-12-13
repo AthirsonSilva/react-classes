@@ -1,8 +1,9 @@
 import React from 'react'
 import '../../App.css'
+import Form from '../Form'
 import './styles.css'
 
-import { FaEdit, FaEraser, FaPlus, FaSearch } from 'react-icons/fa'
+import Todo from '../Todo'
 
 export default class Main extends React.Component {
 	state = {
@@ -114,83 +115,29 @@ export default class Main extends React.Component {
 				<div className='Elements-container'>
 					<div className='Actions-container'>
 						<div className='Form-container'>
-							<form
-								onSubmit={this.handleTaskAddition}
-								className='Todo-form'
-								action='#'
-							>
-								<h3>Add new task</h3>
-
-								<div className='Form-body'>
-									<input
-										onChange={this.handleTaskChange}
-										type='text'
-										value={this.state.task}
-										placeholder='New task'
-									/>
-									<button type='submit'>
-										<FaPlus color='white' size={20} />
-									</button>
-								</div>
-							</form>
+							<Form
+								handleTaskChange={this.handleTaskChange}
+								handleTaskAddition={this.handleTaskAddition}
+								task={this.state.task}
+								title='Add new task'
+							/>
 						</div>
 						<div className='Form-container'>
-							<form className='Todo-form' action='#'>
-								<h3>Seach task</h3>
-
-								<div className='Form-body'>
-									<input
-										onChange={this.handleSearchChange}
-										type='text'
-										value={this.state.search}
-										placeholder='New task'
-									/>
-									<button type='submit'>
-										<FaSearch color='white' size={20} />
-									</button>
-								</div>
-							</form>
+							<Form
+								handleTaskChange={this.handleSearchChange}
+								handleTaskAddition={this.handleTaskSearch}
+								task={this.state.search}
+								title='Search task'
+							/>
 						</div>
 					</div>
 
 					<div className='Task-container'>
-						<h3>Tasks</h3>
-
-						<ul>
-							{this.state.taskList.map((task, index) => {
-								return (
-									<div key={task} className='Task-list'>
-										<li>
-											{task}
-											<div className='Action-buttons'>
-												<span
-													onClick={(e) =>
-														this.handleTaskEdit(
-															e,
-															index
-														)
-													}
-													className='Edit-button'
-												>
-													<FaEdit />
-												</span>
-												<span
-													onClick={(e) =>
-														this.handleTaskDelete(
-															e,
-															index
-														)
-													}
-													className='Delete-button'
-												>
-													<FaEraser />
-												</span>
-											</div>
-										</li>
-									</div>
-								)
-							})}
-						</ul>
+						<Todo
+							taskList={this.state.taskList}
+							handleTaskDelete={this.handleTaskDelete}
+							handleTaskEdit={this.handleTaskEdit}
+						/>
 					</div>
 				</div>
 			</div>
