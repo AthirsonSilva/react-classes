@@ -60,7 +60,8 @@ export default class Main extends React.Component {
 		}
 
 		this.setState({
-			filteredTaskList: [...this.state.taskList, this.state.task],
+			taskList: [...this.state.taskList, this.state.task],
+			filteredTaskList: [...this.state.filteredTaskList, this.state.task],
 			task: ''
 		})
 	}
